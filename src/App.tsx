@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import GlobalStyle from "./styles/GlobalStyle";
 
-function App() {
+import Section from "./components/Section";
+import SideMenu from "./components/SideMenu";
+
+import Data from "./data";
+import MenuForm from "./components/MenuForm";
+
+const src: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Section
+        variant="blue"
+        title={Data[0].title}
+        description={Data[0].description}
+      />
+      <Section
+        variant="beige"
+        title={Data[1].title}
+        description={Data[1].description}
+      />
+      <Section
+        variant="blue"
+        title={Data[2].title}
+        description={Data[2].description}
+      />
+      <Section
+        variant="white"
+        title={Data[3].title}
+        description={Data[3].description}
+      />
+      <Section
+        variant="black"
+        title={Data[4].title}
+        description={Data[4].description}
+      />
+      <SideMenu>
+        <MenuForm />
+      </SideMenu>
+      <GlobalStyle />
+    </>
   );
-}
+};
 
-export default App;
+export default src;
